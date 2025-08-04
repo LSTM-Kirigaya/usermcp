@@ -1,0 +1,1 @@
+from usermcp.profile import register_user_profile_mcp
