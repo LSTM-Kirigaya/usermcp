@@ -1,5 +1,5 @@
 {
-  "clientId": "b214e2f7-e2f7-54e2f755441-84e2f755441dd54-1dd5437d",
+  "clientId": "f07a8529-8529-5a85298091a-8a85298091ac9cf-ac9cfc68",
   "currentIndex": 1,
   "tabs": [
     {
@@ -279,7 +279,7 @@
             "role": "user",
             "content": "\n    You are a user profile manager to provide CURD access to user preferences and personal information.\n    - You should invoke `usermcp_query_user_profile` actively when the context contains relevant tokens like the user's name or other personal information.\n    - You should invoke `usermcp_insert_user_profile` when the relevant information is triggered in your context.\n    - You should invoke `usermcp_delete_user_profile` when the user's feedback is different from what you expected.\n     当前用户为 kirigaya",
             "extraInfo": {
-              "created": 1754391019556,
+              "created": 1754391379929,
               "state": "success",
               "serverName": "deepseek",
               "enableXmlWrapper": false
@@ -290,7 +290,7 @@
             "content": "",
             "tool_calls": [
               {
-                "id": "call_0_b9a26b8c-1a5c-4844-a4f3-2587ad0171d1",
+                "id": "call_0_84856d71-a829-4b82-8b66-6d6360a372a4",
                 "index": 0,
                 "type": "function",
                 "function": {
@@ -300,7 +300,7 @@
               }
             ],
             "extraInfo": {
-              "created": 1754391024687,
+              "created": 1754391386399,
               "state": "success",
               "serverName": "deepseek",
               "enableXmlWrapper": false
@@ -309,15 +309,15 @@
           {
             "role": "tool",
             "index": 0,
-            "tool_call_id": "call_0_b9a26b8c-1a5c-4844-a4f3-2587ad0171d1",
+            "tool_call_id": "call_0_84856d71-a829-4b82-8b66-6d6360a372a4",
             "content": [
               {
                 "type": "text",
-                "text": "{\n  \"theme\": \"light\",\n  \"language\": \"en-US\",\n  \"notifications\": true,\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"age\": 30,\n  \"interests\": [\n    \"reading\",\n    \"coding\"\n  ]\n}"
+                "text": "{\n  \"theme\": \"light\",\n  \"language\": \"en-US\",\n  \"notifications\": true\n}"
               }
             ],
             "extraInfo": {
-              "created": 1754391024698,
+              "created": 1754391386414,
               "state": "success",
               "serverName": "deepseek",
               "usage": {
@@ -325,39 +325,39 @@
                 "completion_tokens": 25,
                 "total_tokens": 766,
                 "prompt_tokens_details": {
-                  "cached_tokens": 64
+                  "cached_tokens": 704
                 },
-                "prompt_cache_hit_tokens": 64,
-                "prompt_cache_miss_tokens": 677
+                "prompt_cache_hit_tokens": 704,
+                "prompt_cache_miss_tokens": 37
               },
               "enableXmlWrapper": false
             }
           },
           {
             "role": "assistant",
-            "content": "当前用户 \"kirigaya\" 的个人资料如下：\n\n- **主题**: light\n- **语言**: en-US\n- **通知**: 开启\n- **姓名**: Test User\n- **邮箱**: test@example.com\n- **年龄**: 30\n- **兴趣**: reading, coding\n\n如果需要更新、删除或添加其他信息，请告诉我！",
+            "content": "当前用户 \"kirigaya\" 的个人资料如下：\n\n- **主题**: 浅色 (light)\n- **语言**: 英语 (en-US)\n- **通知**: 启用 (true)\n\n如果需要更新或修改这些信息，请告诉我！",
             "extraInfo": {
-              "created": 1754391033302,
+              "created": 1754391392272,
               "state": "success",
               "serverName": "deepseek",
               "usage": {
-                "prompt_tokens": 864,
-                "completion_tokens": 75,
-                "total_tokens": 939,
+                "prompt_tokens": 809,
+                "completion_tokens": 51,
+                "total_tokens": 860,
                 "prompt_tokens_details": {
-                  "cached_tokens": 704
+                  "cached_tokens": 768
                 },
-                "prompt_cache_hit_tokens": 704,
-                "prompt_cache_miss_tokens": 160
+                "prompt_cache_hit_tokens": 768,
+                "prompt_cache_miss_tokens": 41
               },
               "enableXmlWrapper": false
             }
           },
           {
             "role": "user",
-            "content": "不对，我的邮箱是 zhelonghuang@qq.com，年龄24，姓名为 这龙皇",
+            "content": "我的邮箱是 zhelonghuang@qq.com，年龄24，姓名为 kirigaya",
             "extraInfo": {
-              "created": 1754391128081,
+              "created": 1754391409882,
               "state": "success",
               "serverName": "deepseek",
               "enableXmlWrapper": false
@@ -368,17 +368,17 @@
             "content": "",
             "tool_calls": [
               {
-                "id": "call_0_237007e3-cf35-4b50-9085-2f28f7326243",
+                "id": "call_0_91e24e1b-c85e-4188-a2b4-6e9e22c320d7",
                 "index": 0,
                 "type": "function",
                 "function": {
                   "name": "usermcp_insert_user_profile",
-                  "arguments": "{\"user_id\":\"kirigaya\",\"profile\":{\"theme\":\"light\",\"language\":\"en-US\",\"notifications\":true,\"name\":\"这龙皇\",\"email\":\"zhelonghuang@qq.com\",\"age\":24,\"interests\":[\"reading\",\"coding\"]}}"
+                  "arguments": "{\"user_id\":\"kirigaya\",\"profile\":{\"email\":\"zhelonghuang@qq.com\",\"age\":24,\"name\":\"kirigaya\",\"theme\":\"light\",\"language\":\"en-US\",\"notifications\":true}}"
                 }
               }
             ],
             "extraInfo": {
-              "created": 1754391135163,
+              "created": 1754391416358,
               "state": "success",
               "serverName": "deepseek",
               "enableXmlWrapper": false
@@ -387,46 +387,238 @@
           {
             "role": "tool",
             "index": 0,
-            "tool_call_id": "call_0_237007e3-cf35-4b50-9085-2f28f7326243",
+            "tool_call_id": "call_0_91e24e1b-c85e-4188-a2b4-6e9e22c320d7",
             "content": [
               {
                 "type": "text",
-                "text": "{\n  \"theme\": \"light\",\n  \"language\": \"en-US\",\n  \"notifications\": true,\n  \"name\": \"这龙皇\",\n  \"email\": \"zhelonghuang@qq.com\",\n  \"age\": 24,\n  \"interests\": [\n    \"reading\",\n    \"coding\"\n  ]\n}"
+                "text": "{\n  \"theme\": \"light\",\n  \"language\": \"en-US\",\n  \"notifications\": true,\n  \"email\": \"zhelonghuang@qq.com\",\n  \"age\": 24,\n  \"name\": \"kirigaya\"\n}"
               }
             ],
             "extraInfo": {
-              "created": 1754391135189,
+              "created": 1754391416377,
               "state": "success",
               "serverName": "deepseek",
               "usage": {
-                "prompt_tokens": 965,
-                "completion_tokens": 71,
-                "total_tokens": 1036,
+                "prompt_tokens": 883,
+                "completion_tokens": 62,
+                "total_tokens": 945,
                 "prompt_tokens_details": {
-                  "cached_tokens": 896
+                  "cached_tokens": 832
                 },
-                "prompt_cache_hit_tokens": 896,
-                "prompt_cache_miss_tokens": 69
+                "prompt_cache_hit_tokens": 832,
+                "prompt_cache_miss_tokens": 51
               },
               "enableXmlWrapper": false
             }
           },
           {
             "role": "assistant",
-            "content": "用户 \"kirigaya\" 的个人资料已更新为以下信息：\n\n- **主题**: light\n- **语言**: en-US\n- **通知**: 开启\n- **姓名**: 这龙皇\n- **邮箱**: zhelonghuang@qq.com\n- **年龄**: 24\n- **兴趣**: reading, coding\n\n如果有其他需要修改或补充的地方，请随时告诉我！",
+            "content": "用户 \"kirigaya\" 的个人资料已成功更新，包含以下信息：\n\n- **邮箱**: zhelonghuang@qq.com\n- **年龄**: 24\n- **姓名**: kirigaya\n- **主题**: 浅色 (light)\n- **语言**: 英语 (en-US)\n- **通知**: 启用 (true)\n\n如果需要进一步修改或查询，请随时告诉我！",
             "extraInfo": {
-              "created": 1754391143488,
+              "created": 1754391427796,
               "state": "success",
               "serverName": "deepseek",
               "usage": {
-                "prompt_tokens": 1139,
+                "prompt_tokens": 1024,
                 "completion_tokens": 84,
-                "total_tokens": 1223,
+                "total_tokens": 1108,
                 "prompt_tokens_details": {
-                  "cached_tokens": 1024
+                  "cached_tokens": 896
                 },
-                "prompt_cache_hit_tokens": 1024,
-                "prompt_cache_miss_tokens": 115
+                "prompt_cache_hit_tokens": 896,
+                "prompt_cache_miss_tokens": 128
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "user",
+            "content": "请帮我绘制两个圆圈",
+            "extraInfo": {
+              "created": 1754391442155,
+              "state": "success",
+              "serverName": "deepseek",
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_0_1c2f88a2-f19d-4c74-9522-69729ed6e5b6",
+                "index": 0,
+                "type": "function",
+                "function": {
+                  "name": "draw_circle",
+                  "arguments": "{\"user_id\": \"kirigaya\", \"config\": {\"radius\": 50, \"color\": \"blue\", \"line_width\": 2}}"
+                }
+              },
+              {
+                "id": "call_1_a565100f-5569-48d4-ab05-7205520967cb",
+                "index": 1,
+                "type": "function",
+                "function": {
+                  "name": "draw_circle",
+                  "arguments": "{\"user_id\": \"kirigaya\", \"config\": {\"radius\": 50, \"color\": \"red\", \"line_width\": 2}}"
+                }
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391450348,
+              "state": "success",
+              "serverName": "deepseek",
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "tool",
+            "index": 0,
+            "tool_call_id": "call_0_1c2f88a2-f19d-4c74-9522-69729ed6e5b6",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"action\": \"draw_circle\",\n  \"user_id\": \"kirigaya\",\n  \"radius\": 50,\n  \"color\": \"blue\",\n  \"line_width\": 2,\n  \"status\": \"success\"\n}"
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391450370,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 1116,
+                "completion_tokens": 89,
+                "total_tokens": 1205,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1088
+                },
+                "prompt_cache_hit_tokens": 1088,
+                "prompt_cache_miss_tokens": 28
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "tool",
+            "index": 1,
+            "tool_call_id": "call_1_a565100f-5569-48d4-ab05-7205520967cb",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"action\": \"draw_circle\",\n  \"user_id\": \"kirigaya\",\n  \"radius\": 50,\n  \"color\": \"red\",\n  \"line_width\": 2,\n  \"status\": \"success\"\n}"
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391450380,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 1116,
+                "completion_tokens": 89,
+                "total_tokens": 1205,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1088
+                },
+                "prompt_cache_hit_tokens": 1088,
+                "prompt_cache_miss_tokens": 28
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "assistant",
+            "content": "已为您绘制了两个圆圈：\n\n1. **蓝色圆圈**  \n   - 半径: 50  \n   - 线条宽度: 2  \n\n2. **红色圆圈**  \n   - 半径: 50  \n   - 线条宽度: 2  \n\n如果需要绘制其他图形或调整参数，请告诉我！",
+            "extraInfo": {
+              "created": 1754391456723,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 1353,
+                "completion_tokens": 65,
+                "total_tokens": 1418,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1152
+                },
+                "prompt_cache_hit_tokens": 1152,
+                "prompt_cache_miss_tokens": 201
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "user",
+            "content": "我更喜欢用  #C277D1 作为我的常用的主题色 ",
+            "extraInfo": {
+              "created": 1754391473670,
+              "state": "success",
+              "serverName": "deepseek",
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_0_80cb7e36-b0bb-4af0-b7de-26941ef135aa",
+                "index": 0,
+                "type": "function",
+                "function": {
+                  "name": "usermcp_insert_user_profile",
+                  "arguments": "{\"user_id\":\"kirigaya\",\"profile\":{\"email\":\"zhelonghuang@qq.com\",\"age\":24,\"name\":\"kirigaya\",\"theme\":\"#C277D1\",\"language\":\"en-US\",\"notifications\":true}}"
+                }
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391480623,
+              "state": "success",
+              "serverName": "deepseek",
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "tool",
+            "index": 0,
+            "tool_call_id": "call_0_80cb7e36-b0bb-4af0-b7de-26941ef135aa",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"age\": 24,\n  \"email\": \"zhelonghuang@qq.com\",\n  \"language\": \"en-US\",\n  \"name\": \"kirigaya\",\n  \"notifications\": true,\n  \"theme\": \"#C277D1\"\n}"
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391480638,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 1437,
+                "completion_tokens": 66,
+                "total_tokens": 1503,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1408
+                },
+                "prompt_cache_hit_tokens": 1408,
+                "prompt_cache_miss_tokens": 29
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "assistant",
+            "content": "您的个人资料已更新，主题色已设置为 **#C277D1**。以下是当前信息：\n\n- **邮箱**: zhelonghuang@qq.com  \n- **年龄**: 24  \n- **姓名**: kirigaya  \n- **主题色**: #C277D1  \n- **语言**: 英语 (en-US)  \n- **通知**: 启用 (true)  \n\n如果需要进一步调整或其他帮助，请随时告诉我！",
+            "extraInfo": {
+              "created": 1754391489149,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 1586,
+                "completion_tokens": 92,
+                "total_tokens": 1678,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1472
+                },
+                "prompt_cache_hit_tokens": 1472,
+                "prompt_cache_miss_tokens": 114
               },
               "enableXmlWrapper": false
             }

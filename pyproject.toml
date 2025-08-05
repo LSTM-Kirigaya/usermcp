@@ -28,4 +28,4 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 include = ["localaplace"]
-exclude = ["test", ".gitignore", "uv.lock", "dist", ".venv", ".vscode", "profiles"]
+exclude = ["test", ".gitignore", "uv.lock", "dist", ".venv", ".vscode", "profiles", ".openmcp"]
