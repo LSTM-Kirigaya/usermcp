@@ -3,13 +3,19 @@ import yaml
 from typing import Dict, Any
 
 class ProfileManager:
-    def __init__(self, profiles_dir: str = "profiles"):
+    def __init__(self, profiles_dir: str = None):
+        # 如果没有指定路径，就默认 ~/.usermcp/profiles
+        if profiles_dir is None:
+            home_dir = os.path.expanduser("~")
+            profiles_dir = os.path.join(home_dir, ".usermcp", "profiles")
+        
         self.profiles_dir = profiles_dir
         self.default_profile = {
             'theme': 'light',
             'language': 'en-US',
             'notifications': True
         }
+
         os.makedirs(self.profiles_dir, exist_ok=True)
 
     def _get_user_file(self, user_id: str) -> str:
@@ -29,7 +35,7 @@ class ProfileManager:
         user_file = self._get_user_file(user_id)
         if os.path.exists(user_file):
             return self._load_yaml(user_file)
-        return self.default_profile
+        return dict(self.default_profile)  # 返回副本，避免修改默认值
 
     def insert_profile(self, user_id: str, profile_data: Dict[str, Any]) -> Dict[str, Any]:
         user_file = self._get_user_file(user_id)
@@ -39,10 +45,10 @@ class ProfileManager:
             self._save_yaml(user_file, existing)
             return existing
         else:
-            default_data = self.default_profile
-            default_data.update(profile_data)
-            self._save_yaml(user_file, default_data)
-            return default_data
+            new_data = dict(self.default_profile)  # 拷贝默认配置
+            new_data.update(profile_data)
+            self._save_yaml(user_file, new_data)
+            return new_data
 
     def delete_profile(self, user_id: str) -> bool:
         user_file = self._get_user_file(user_id)
