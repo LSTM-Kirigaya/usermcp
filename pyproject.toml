@@ -1,6 +1,6 @@
 [project]
 name = "usermcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -18,7 +18,8 @@ classifiers = [
     'Programming Language :: Python :: 3'
 ]
 dependencies = [
-    "mcp>=1.12.3",
+    "mcp[cli]>=1.12.3",
+    "pyyaml>=6.0.2",
 ]
 
 [build-system]
@@ -27,4 +28,4 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 include = ["localaplace"]
-exclude = ["test", ".gitignore", "uv.lock", "dist", ".venv"]
+exclude = ["test", ".gitignore", "uv.lock", "dist", ".venv", ".vscode"]

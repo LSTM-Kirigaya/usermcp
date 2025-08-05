@@ -1,0 +1,9 @@
+age: 30
+email: test@example.com
+interests:
+- reading
+- coding
+language: en-US
+name: Test User
+notifications: true
+theme: light
