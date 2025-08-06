@@ -9,9 +9,12 @@ keywords = ['mcp', 'agent', 'llm', 'profile', 'user']
 classifiers = [
     'Intended Audience :: Developers',
     'Operating System :: OS Independent',
-    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3'
 ]
-dependencies = ["mcp>=1.12.3"]
+dependencies = [
+    "mcp[cli]>=1.12.3",
+    "pyyaml>=6.0.2",
+]
 
 [build-system]
 requires = ["setuptools"]

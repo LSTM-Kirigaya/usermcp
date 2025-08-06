@@ -1,0 +1,770 @@
+{
+  "clientId": "f07a8529-8529-5a85298091a-8a85298091ac9cf-ac9cfc68",
+  "currentIndex": 1,
+  "tabs": [
+    {
+      "name": "Tools",
+      "icon": "icon-tool",
+      "type": "blank",
+      "componentIndex": 2,
+      "storage": {
+        "activeNames": [
+          0
+        ],
+        "autoDetectDiagram": {
+          "edges": [
+            {
+              "id": "usermcp_query_user_profile-usermcp_insert_user_profile",
+              "sources": [
+                "usermcp_query_user_profile"
+              ],
+              "targets": [
+                "usermcp_insert_user_profile"
+              ]
+            },
+            {
+              "id": "usermcp_insert_user_profile-usermcp_delete_user_profile",
+              "sources": [
+                "usermcp_insert_user_profile"
+              ],
+              "targets": [
+                "usermcp_delete_user_profile"
+              ]
+            },
+            {
+              "id": "usermcp_delete_user_profile-draw_circle",
+              "sources": [
+                "usermcp_delete_user_profile"
+              ],
+              "targets": [
+                "draw_circle"
+              ]
+            },
+            {
+              "id": "draw_circle-draw_rectangle",
+              "sources": [
+                "draw_circle"
+              ],
+              "targets": [
+                "draw_rectangle"
+              ]
+            }
+          ],
+          "views": [
+            {
+              "tool": {
+                "name": "usermcp_query_user_profile",
+                "description": "Query user profile",
+                "inputSchema": {
+                  "type": "object",
+                  "properties": {
+                    "user_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "user_id"
+                  ]
+                }
+              },
+              "status": "success",
+              "function": {
+                "name": "usermcp_query_user_profile",
+                "arguments": "{\"user_id\":\"test\"}"
+              },
+              "result": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"theme\": \"light\",\n  \"language\": \"en-US\",\n  \"notifications\": true\n}"
+                }
+              ],
+              "createAt": 1754390830857,
+              "finishAt": 1754390837267,
+              "llmTimecost": 6397,
+              "toolcallTimecost": 12
+            },
+            {
+              "tool": {
+                "name": "usermcp_insert_user_profile",
+                "description": "Insert user profile",
+                "inputSchema": {
+                  "type": "object",
+                  "properties": {
+                    "user_id": {
+                      "type": "string"
+                    },
+                    "profile": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "user_id",
+                    "profile"
+                  ]
+                }
+              },
+              "status": "success",
+              "function": {
+                "name": "usermcp_insert_user_profile",
+                "arguments": "{\"user_id\":\"test_user_123\",\"profile\":{\"name\":\"Test User\",\"email\":\"test@example.com\",\"age\":30,\"interests\":[\"reading\",\"coding\"]}}"
+              },
+              "result": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"theme\": \"light\",\n  \"language\": \"en-US\",\n  \"notifications\": true,\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"age\": 30,\n  \"interests\": [\n    \"reading\",\n    \"coding\"\n  ]\n}"
+                }
+              ],
+              "createAt": 1754390837268,
+              "finishAt": 1754390843704,
+              "llmTimecost": 6432,
+              "toolcallTimecost": 4
+            },
+            {
+              "tool": {
+                "name": "usermcp_delete_user_profile",
+                "description": "Delete user profile",
+                "inputSchema": {
+                  "type": "object",
+                  "properties": {
+                    "user_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "user_id"
+                  ]
+                }
+              },
+              "status": "success",
+              "function": {
+                "name": "usermcp_delete_user_profile",
+                "arguments": "{\"user_id\":\"test_user_id\"}"
+              },
+              "result": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"deleted\": false\n}"
+                }
+              ],
+              "createAt": 1754390843705,
+              "finishAt": 1754390849496,
+              "llmTimecost": 5785,
+              "toolcallTimecost": 6
+            },
+            {
+              "tool": {
+                "name": "draw_circle",
+                "description": "绘制圆形",
+                "inputSchema": {
+                  "type": "object",
+                  "properties": {
+                    "user_id": {
+                      "type": "string"
+                    },
+                    "config": {
+                      "type": "object",
+                      "properties": {
+                        "radius": {
+                          "type": "integer"
+                        },
+                        "color": {
+                          "type": "string"
+                        },
+                        "line_width": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "radius",
+                        "color",
+                        "line_width"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "user_id",
+                    "config"
+                  ]
+                }
+              },
+              "status": "success",
+              "function": {
+                "name": "draw_circle",
+                "arguments": "{\"user_id\":\"test_user\",\"config\":{\"radius\":50,\"color\":\"blue\",\"line_width\":2}}"
+              },
+              "result": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"action\": \"draw_circle\",\n  \"user_id\": \"test_user\",\n  \"radius\": 50,\n  \"color\": \"blue\",\n  \"line_width\": 2,\n  \"status\": \"success\"\n}"
+                }
+              ],
+              "createAt": 1754390849498,
+              "finishAt": 1754390855093,
+              "llmTimecost": 5572,
+              "toolcallTimecost": 23
+            },
+            {
+              "tool": {
+                "name": "draw_rectangle",
+                "description": "绘制矩形",
+                "inputSchema": {
+                  "type": "object",
+                  "properties": {
+                    "user_id": {
+                      "type": "string"
+                    },
+                    "config": {
+                      "type": "object",
+                      "properties": {
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "color": {
+                          "type": "string"
+                        },
+                        "line_width": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "width",
+                        "height"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "user_id",
+                    "config"
+                  ]
+                }
+              },
+              "status": "success",
+              "function": {
+                "name": "draw_rectangle",
+                "arguments": "{\"user_id\":\"test_user\",\"config\":{\"width\":100,\"height\":50,\"color\":\"blue\",\"line_width\":2}}"
+              },
+              "result": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"action\": \"draw_rectangle\",\n  \"user_id\": \"test_user\",\n  \"width\": 100,\n  \"height\": 50,\n  \"color\": \"blue\",\n  \"line_width\": 2,\n  \"status\": \"success\"\n}"
+                }
+              ],
+              "createAt": 1754390855094,
+              "finishAt": 1754390862791,
+              "llmTimecost": 7688,
+              "toolcallTimecost": 9
+            }
+          ]
+        },
+        "formData": {
+          "user_id": ""
+        },
+        "currentToolName": "usermcp_query_user_profile"
+      }
+    },
+    {
+      "name": "Interaction Test",
+      "icon": "icon-robot",
+      "type": "blank",
+      "componentIndex": 3,
+      "storage": {
+        "activeNames": [
+          0
+        ],
+        "messages": [
+          {
+            "role": "user",
+            "content": "\n    You are a user profile manager to provide CURD access to user preferences and personal information.\n    - You should invoke `usermcp_query_user_profile` actively when the context contains relevant tokens like the user's name or other personal information.\n    - You should invoke `usermcp_insert_user_profile` when the relevant information is triggered in your context.\n    - You should invoke `usermcp_delete_user_profile` when the user's feedback is different from what you expected.\n     当前用户为 kirigaya",
+            "extraInfo": {
+              "created": 1754391379929,
+              "state": "success",
+              "serverName": "deepseek",
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_0_84856d71-a829-4b82-8b66-6d6360a372a4",
+                "index": 0,
+                "type": "function",
+                "function": {
+                  "name": "usermcp_query_user_profile",
+                  "arguments": "{\"user_id\":\"kirigaya\"}"
+                }
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391386399,
+              "state": "success",
+              "serverName": "deepseek",
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "tool",
+            "index": 0,
+            "tool_call_id": "call_0_84856d71-a829-4b82-8b66-6d6360a372a4",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"theme\": \"light\",\n  \"language\": \"en-US\",\n  \"notifications\": true\n}"
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391386414,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 741,
+                "completion_tokens": 25,
+                "total_tokens": 766,
+                "prompt_tokens_details": {
+                  "cached_tokens": 704
+                },
+                "prompt_cache_hit_tokens": 704,
+                "prompt_cache_miss_tokens": 37
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "assistant",
+            "content": "当前用户 \"kirigaya\" 的个人资料如下：\n\n- **主题**: 浅色 (light)\n- **语言**: 英语 (en-US)\n- **通知**: 启用 (true)\n\n如果需要更新或修改这些信息，请告诉我！",
+            "extraInfo": {
+              "created": 1754391392272,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 809,
+                "completion_tokens": 51,
+                "total_tokens": 860,
+                "prompt_tokens_details": {
+                  "cached_tokens": 768
+                },
+                "prompt_cache_hit_tokens": 768,
+                "prompt_cache_miss_tokens": 41
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "user",
+            "content": "我的邮箱是 zhelonghuang@qq.com，年龄24，姓名为 kirigaya",
+            "extraInfo": {
+              "created": 1754391409882,
+              "state": "success",
+              "serverName": "deepseek",
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_0_91e24e1b-c85e-4188-a2b4-6e9e22c320d7",
+                "index": 0,
+                "type": "function",
+                "function": {
+                  "name": "usermcp_insert_user_profile",
+                  "arguments": "{\"user_id\":\"kirigaya\",\"profile\":{\"email\":\"zhelonghuang@qq.com\",\"age\":24,\"name\":\"kirigaya\",\"theme\":\"light\",\"language\":\"en-US\",\"notifications\":true}}"
+                }
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391416358,
+              "state": "success",
+              "serverName": "deepseek",
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "tool",
+            "index": 0,
+            "tool_call_id": "call_0_91e24e1b-c85e-4188-a2b4-6e9e22c320d7",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"theme\": \"light\",\n  \"language\": \"en-US\",\n  \"notifications\": true,\n  \"email\": \"zhelonghuang@qq.com\",\n  \"age\": 24,\n  \"name\": \"kirigaya\"\n}"
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391416377,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 883,
+                "completion_tokens": 62,
+                "total_tokens": 945,
+                "prompt_tokens_details": {
+                  "cached_tokens": 832
+                },
+                "prompt_cache_hit_tokens": 832,
+                "prompt_cache_miss_tokens": 51
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "assistant",
+            "content": "用户 \"kirigaya\" 的个人资料已成功更新，包含以下信息：\n\n- **邮箱**: zhelonghuang@qq.com\n- **年龄**: 24\n- **姓名**: kirigaya\n- **主题**: 浅色 (light)\n- **语言**: 英语 (en-US)\n- **通知**: 启用 (true)\n\n如果需要进一步修改或查询，请随时告诉我！",
+            "extraInfo": {
+              "created": 1754391427796,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 1024,
+                "completion_tokens": 84,
+                "total_tokens": 1108,
+                "prompt_tokens_details": {
+                  "cached_tokens": 896
+                },
+                "prompt_cache_hit_tokens": 896,
+                "prompt_cache_miss_tokens": 128
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "user",
+            "content": "请帮我绘制两个圆圈",
+            "extraInfo": {
+              "created": 1754391442155,
+              "state": "success",
+              "serverName": "deepseek",
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_0_1c2f88a2-f19d-4c74-9522-69729ed6e5b6",
+                "index": 0,
+                "type": "function",
+                "function": {
+                  "name": "draw_circle",
+                  "arguments": "{\"user_id\": \"kirigaya\", \"config\": {\"radius\": 50, \"color\": \"blue\", \"line_width\": 2}}"
+                }
+              },
+              {
+                "id": "call_1_a565100f-5569-48d4-ab05-7205520967cb",
+                "index": 1,
+                "type": "function",
+                "function": {
+                  "name": "draw_circle",
+                  "arguments": "{\"user_id\": \"kirigaya\", \"config\": {\"radius\": 50, \"color\": \"red\", \"line_width\": 2}}"
+                }
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391450348,
+              "state": "success",
+              "serverName": "deepseek",
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "tool",
+            "index": 0,
+            "tool_call_id": "call_0_1c2f88a2-f19d-4c74-9522-69729ed6e5b6",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"action\": \"draw_circle\",\n  \"user_id\": \"kirigaya\",\n  \"radius\": 50,\n  \"color\": \"blue\",\n  \"line_width\": 2,\n  \"status\": \"success\"\n}"
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391450370,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 1116,
+                "completion_tokens": 89,
+                "total_tokens": 1205,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1088
+                },
+                "prompt_cache_hit_tokens": 1088,
+                "prompt_cache_miss_tokens": 28
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "tool",
+            "index": 1,
+            "tool_call_id": "call_1_a565100f-5569-48d4-ab05-7205520967cb",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"action\": \"draw_circle\",\n  \"user_id\": \"kirigaya\",\n  \"radius\": 50,\n  \"color\": \"red\",\n  \"line_width\": 2,\n  \"status\": \"success\"\n}"
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391450380,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 1116,
+                "completion_tokens": 89,
+                "total_tokens": 1205,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1088
+                },
+                "prompt_cache_hit_tokens": 1088,
+                "prompt_cache_miss_tokens": 28
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "assistant",
+            "content": "已为您绘制了两个圆圈：\n\n1. **蓝色圆圈**  \n   - 半径: 50  \n   - 线条宽度: 2  \n\n2. **红色圆圈**  \n   - 半径: 50  \n   - 线条宽度: 2  \n\n如果需要绘制其他图形或调整参数，请告诉我！",
+            "extraInfo": {
+              "created": 1754391456723,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 1353,
+                "completion_tokens": 65,
+                "total_tokens": 1418,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1152
+                },
+                "prompt_cache_hit_tokens": 1152,
+                "prompt_cache_miss_tokens": 201
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "user",
+            "content": "我更喜欢用  #C277D1 作为我的常用的主题色 ",
+            "extraInfo": {
+              "created": 1754391473670,
+              "state": "success",
+              "serverName": "deepseek",
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_0_80cb7e36-b0bb-4af0-b7de-26941ef135aa",
+                "index": 0,
+                "type": "function",
+                "function": {
+                  "name": "usermcp_insert_user_profile",
+                  "arguments": "{\"user_id\":\"kirigaya\",\"profile\":{\"email\":\"zhelonghuang@qq.com\",\"age\":24,\"name\":\"kirigaya\",\"theme\":\"#C277D1\",\"language\":\"en-US\",\"notifications\":true}}"
+                }
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391480623,
+              "state": "success",
+              "serverName": "deepseek",
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "tool",
+            "index": 0,
+            "tool_call_id": "call_0_80cb7e36-b0bb-4af0-b7de-26941ef135aa",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"age\": 24,\n  \"email\": \"zhelonghuang@qq.com\",\n  \"language\": \"en-US\",\n  \"name\": \"kirigaya\",\n  \"notifications\": true,\n  \"theme\": \"#C277D1\"\n}"
+              }
+            ],
+            "extraInfo": {
+              "created": 1754391480638,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 1437,
+                "completion_tokens": 66,
+                "total_tokens": 1503,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1408
+                },
+                "prompt_cache_hit_tokens": 1408,
+                "prompt_cache_miss_tokens": 29
+              },
+              "enableXmlWrapper": false
+            }
+          },
+          {
+            "role": "assistant",
+            "content": "您的个人资料已更新，主题色已设置为 **#C277D1**。以下是当前信息：\n\n- **邮箱**: zhelonghuang@qq.com  \n- **年龄**: 24  \n- **姓名**: kirigaya  \n- **主题色**: #C277D1  \n- **语言**: 英语 (en-US)  \n- **通知**: 启用 (true)  \n\n如果需要进一步调整或其他帮助，请随时告诉我！",
+            "extraInfo": {
+              "created": 1754391489149,
+              "state": "success",
+              "serverName": "deepseek",
+              "usage": {
+                "prompt_tokens": 1586,
+                "completion_tokens": 92,
+                "total_tokens": 1678,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1472
+                },
+                "prompt_cache_hit_tokens": 1472,
+                "prompt_cache_miss_tokens": 114
+              },
+              "enableXmlWrapper": false
+            }
+          }
+        ],
+        "parallelMode": false,
+        "parallelChats": [],
+        "selectedModels": [],
+        "settings": {
+          "modelIndex": 0,
+          "enableTools": [
+            {
+              "name": "usermcp_query_user_profile",
+              "description": "Query user profile",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "user_id"
+                ]
+              },
+              "enabled": true
+            },
+            {
+              "name": "usermcp_insert_user_profile",
+              "description": "Insert user profile",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "string"
+                  },
+                  "profile": {
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "user_id",
+                  "profile"
+                ]
+              },
+              "enabled": true
+            },
+            {
+              "name": "usermcp_delete_user_profile",
+              "description": "Delete user profile",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "user_id"
+                ]
+              },
+              "enabled": true
+            },
+            {
+              "name": "draw_circle",
+              "description": "绘制圆形",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "string"
+                  },
+                  "config": {
+                    "type": "object",
+                    "properties": {
+                      "radius": {
+                        "type": "integer"
+                      },
+                      "color": {
+                        "type": "string"
+                      },
+                      "line_width": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "radius",
+                      "color",
+                      "line_width"
+                    ]
+                  }
+                },
+                "required": [
+                  "user_id",
+                  "config"
+                ]
+              },
+              "enabled": true
+            },
+            {
+              "name": "draw_rectangle",
+              "description": "绘制矩形",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "string"
+                  },
+                  "config": {
+                    "type": "object",
+                    "properties": {
+                      "width": {
+                        "type": "integer"
+                      },
+                      "height": {
+                        "type": "integer"
+                      },
+                      "color": {
+                        "type": "string"
+                      },
+                      "line_width": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "width",
+                      "height"
+                    ]
+                  }
+                },
+                "required": [
+                  "user_id",
+                  "config"
+                ]
+              },
+              "enabled": true
+            }
+          ],
+          "enableWebSearch": false,
+          "temperature": 0.6,
+          "contextLength": 100,
+          "systemPrompt": "",
+          "enableXmlWrapper": false,
+          "parallelToolCalls": true
+        }
+      }
+    }
+  ]
+}
