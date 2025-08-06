@@ -1,25 +1,17 @@
 [project]
 name = "usermcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-keywords = [
-    'mcp',
-    'agent',
-    'llm',
-    'profile',
-    'user'
-]
+keywords = ['mcp', 'agent', 'llm', 'profile', 'user']
 classifiers = [
     'Intended Audience :: Developers',
     'Operating System :: OS Independent',
-    'Programming Language :: Python :: 3'
+    'Programming Language :: Python :: 3',
 ]
-dependencies = [
-    "mcp>=1.12.3",
-]
+dependencies = ["mcp>=1.12.3"]
 
 [build-system]
 requires = ["setuptools"]
@@ -27,4 +19,10 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 include = ["localaplace"]
-exclude = ["test", ".gitignore", "uv.lock", "dist", ".venv"]
+exclude = [
+    "test",
+    ".gitignore",
+    "uv.lock",
+    "dist",
+    ".venv"
+]
